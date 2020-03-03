@@ -1,5 +1,7 @@
-// -*- go -*-
-
+// Package {{ .Package }} is a ambedded resources file
+// generated with carton.
+//
+// See https://github.com/renard/carton
 package {{ .Package }}
 
 import (
@@ -23,12 +25,11 @@ type file struct {
 	modTime int64
 }
 
-// cartonFS is a map abstraction of the embeded resources. The map keys is the
-// file path and the value is a *file struct.
+// cartonFS is a map abstraction of the embedded resources. The map keys is
+// the file path and the value is a *file struct.
 type cartonFS map[string]*file
 
-
-// Files returns a list of all files embedex in cartonFS
+// Files returns a list of all files embedded in cartonFS
 func (b *cartonFS) Files() []string {
 	f := make([]string, len(*b))
 	i := 0
@@ -54,7 +55,7 @@ func (b *cartonFS) isLocalRecent(path string, cartonfile *file) bool {
 	return false
 }
 
-// getFileLocal returns the local file content intead of cartonFS embeded file.
+// getFileLocal returns the local file content intead of cartonFS embedded file.
 func (b *cartonFS) getFileLocal(path string) (ret []byte, err error) {
 	fh, err := os.Open(path)
 	if err != nil {
@@ -111,9 +112,7 @@ func (b *cartonFS) GetFile(path string) (ret []byte, err error) {
 	return
 }
 
-
 // Begin of dynamic content
-
 
 // {{ .Name }} conatains the carton data.
 var {{ .Name }} = &cartonFS{
@@ -124,8 +123,7 @@ var {{ .Name }} = &cartonFS{
 `,
 		modTime: {{ .ModTime }},
 	},
-{{ end }}
+{{ end -}}
 }
-
 
 // End of dynamic content

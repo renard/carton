@@ -1,5 +1,7 @@
-// -*- go -*-
-
+// Package carton is a ambedded resources file
+// generated with carton.
+//
+// See https://github.com/renard/carton
 package carton
 
 import (
@@ -23,12 +25,11 @@ type file struct {
 	modTime int64
 }
 
-// cartonFS is a map abstraction of the embeded resources. The map keys is the
-// file path and the value is a *file struct.
+// cartonFS is a map abstraction of the embedded resources. The map keys is
+// the file path and the value is a *file struct.
 type cartonFS map[string]*file
 
-
-// Files returns a list of all files embedex in cartonFS
+// Files returns a list of all files embedded in cartonFS
 func (b *cartonFS) Files() []string {
 	f := make([]string, len(*b))
 	i := 0
@@ -54,7 +55,7 @@ func (b *cartonFS) isLocalRecent(path string, cartonfile *file) bool {
 	return false
 }
 
-// getFileLocal returns the local file content intead of cartonFS embeded file.
+// getFileLocal returns the local file content intead of cartonFS embedded file.
 func (b *cartonFS) getFileLocal(path string) (ret []byte, err error) {
 	fh, err := os.Open(path)
 	if err != nil {
@@ -111,38 +112,35 @@ func (b *cartonFS) GetFile(path string) (ret []byte, err error) {
 	return
 }
 
-
 // Begin of dynamic content
-
 
 // carton conatains the carton data.
 var carton = &cartonFS{
 
 	`carton.tpl`: &file{
 		content: `
-+,^C)z!rn3[6#YO:'0V8g@\Q4RakfkOTe-TR0$q+N>9HWJ2a&$J9h@](YnALI>UQ"pqV-oO.7G2fFY:9
--aa#]6k&H,U"g?3X6"fDBYu*>>d30Kj^jf/;e&7Ul7UnRq/Bd@38!gP57r+(n?cpa!$/a$4V)t#"QK=)
-D7Z5Plh+'=,'A]$Vl)kZ%;<lo>UN*-ShQ&hQ-"BpY;Y:=@)iG1oha8Wi2u<@]\5kaR:g+c!#d93LbTB<
-E%ICh!E+E*O6"@8lm6N~D)Nll^hQ_bO+rCW8Ma4P,fRgB.;d/eoDN2M92WI6LYW8*ESJmSp&B]heoYPl
-7TqlEiUu9-n%9dH*YVE_3S7N(ap>:8:VNCe?/d2c<(dZZs>L<SD'Jp:W;CWHQg"Q]OLNcr2Vg!B).B8*
-H;>;^Kh$2U=dI/faT<5%bA1m9T1#Botn%pdpU5Ln5kkA*k6EcoWTVt[Bm)@=8:pMkmPC)+N;8_)";F[=
-RK\O+<N[)^m>[5,gG$)th)sC-8B6@@_9[W;.=XK,^*IV.c4+sr/9J^spmbe_$/BcQ=3Qib8~@+#!@[2:
-M)U[GM6_u&F$Bc6'nnY7XOjMPpGX1SNDW6U!SXJPXP>_-uO'm'Z!&Y]!16mL.=9KT!poVoZ~LJr$<CLT
-9S630'*GFI65:G^N#,LHg!/jEVbF^!K,c)\aH0-\"$K.V*-.Ks,JRu4i[$DOcNk]R?6rTg^L7K-ITN*t
-~E(Jpj;O%BaGTs4;q4Ci=GUp-M9)*;cPg@caJIlB?KaFEW3$!>)3Ma"&Mg/Hg[+oE~;7'<(7BH*/#d0e
-/C5otTWeA6~LYFn*CQXt1f?1nYG0SNT,O4HJ$L+rHd=U0EX55fe9#e.A@A2ON#gJRJhFi]kZ0\ZMIgO9
-e.l/6(Qh=[&5X+?T:^EBja^5]l;9l7,a6,eBRSjV[S+l].2R\<8S.ekdA@Mu-~2t$O_P@(%>PHqQe81$
-/g7$tM/:Mk)2IOD@VhT.~<d0+l(M:.BR9'85=ulQth\S;~K,i0H)a&m<gb~a=]&e2Tq,@uArqJNk5aH3
-PRQhE_!iRTY_6Fdc67nX3BS^!f/OHcYf"l^p[pd=XB#dIg1lR$pdX7csIu(-/bH~rqC%V[!>$P*lYODA
-&O??CTJc+ta"8R@O;SVQ^0']8N[fT19T@:&6s%/h>TfLeibO/lU?NgA@=?e8+Vat2.8ZYLR*/bZ;Q$".
-\4e+"QDc%m!ddo_G:LEeUi/;0S8olHMBBoE($m4/N-AtmdPko1^<#FT]6&S#dF2i3dhHY!<5S#L$&72<
-!3t&1[Jhq-fl_Bg9EmFX)NlNskGoY>_~3T:8R.FOLVY^aG8RtctanZ+qP8V,-pNN(YrJ"nTgZ0P<Rg8"
-2D-/]5a8g?UB2~P0lLq3qrWrQ)s8PHY9hJb"!!!
++,^C)z!rn3[6#YO:'0V8g@\Q4Raki*DTe-TR0$q+N>9HWJ-Tr>:9h@](YnALI>UQ"pqV-oO.7G2fFY8R
+Uaa#]2bp,_Y"b2>?-TZq@&bu9RRQrkE+GLfh(0e$,bhb8A5cPl.<C)BYXmju[Hf_~~#j[K4XK#t*/L##
+E+5K@cFinXs2/g]8=k(<s<BSIE-PJ;5L='*6"j?K5i6gX;bL'L'_~q_rf7a1L>GXEJ1R@-^)+KP0<S^/
+&L(N1.<p?b"Y#4JrDdm[^bhfBaB-j<>M%)F_/34>jT4hKEKko56"/Vj!KCFbsq88#0JDE.*N\%4\BT2Y
+~I1T(>8d6G#[Lc(7,Je:1W4!:B0NN<gMa"/O6K'JbnR?%]*)-6)%7hoRjWkajiB3Z-;Dk.GnDUGQ/[TN
+M(u76uZ3<YnDnfm_TYJh_h&aK?U3>CN-K(\onW=,;]\?mT^;GR*jTpd)L4VnR[ifc3<ZXZD~s@1'dOqN
+0j<)<b)[YDUA"gKd",hVH2$*?lGq+[i-,\S;RaMQZPC)+N;8_)";F[IVK\O,gO!Dgn>[5,gG$)th)sC-
+8B6@@_9[W90/<e)jNrE7V4+sr/68Nnfmbe_$/BcQ=3Qib8~A0_+AX.UZ)U[GM6bOad$M#$*nloj^OjMP
+pGX1RcDpmu5>qb3Xi?iR=G)p$QIfM>2"Yl9p_,pgZe+g&l+iVZQ^5p%#7(!4>B]B+X.-KCjV!)(aM^5O
+g:Pj<_W<ce$Fc2"VG\CFj[5!)+=~"/@,mB:gYFQIaPU)Q'kJ\~\(!\EM;E7$B,sa#P"=m+DVcFnr#]5G
+3^0~2JZaX!Y,hYb!!bcCFLRrStF;B@gDC^j8CTTaWQC>4KF~C^.rKL:I"Dai+-nK\S]q^?7$56aS1.\f
+Y9D/1<qDkAR^D8,!OB[1a)i$l(=S<jge9_M\q;eaQ;PI_Rq^^Z5Jhm8HN/-D(]pB\"c_Umc_BhM=<s2Z
+jZ~MIZ\nJP'Pf#0:4[,Nun%pI"#qC6VgkA8d<XsH7dJhIo?et~=D5usVRc,_IIX+"5@)C0d(ZC[SmXe+
+cb\lf(XnkbNEr6B\060Yi3Ln-6n/V"<eYLmaQKMi/;b<q~j861a=g##Frl@V:TW6oSa'LS.[:jaB8bB$
+$&Xoi+0$\"]nZ(8^1'rr8i2ni0W7W3PC;I2,ND~rn6'2qLeWfBT^+Ua-dVg9.45W;PT9o1XFrqOpdZdr
+:V;0DmfV8E,:R]\$i[JI51#O\hJ)79!SG@4?0UX3[,gMFhN7Z35&)J@&*UC25P;h_.6$,n0op"BmD7-+
+K[.cA#rYraFEM(qDPkcir<1)Y36&S#d1Z>Q0hct*<&AIcTUP0NLjMjM:]\n_iP4d3qGW@QEZK!YK732^
+,1pQC2Ia%U>9[iqD]HjJUqNUjYmO=*%V;"(+m!cjXq:jsS,b*uW1i6>QD(#C,$icir~9\l-5/li[!!!$
+!s6j3sq900G!!
 `,
-		modTime: 1583192526000000000,
+		modTime: 1583266572000000000,
 	},
-
 }
-
 
 // End of dynamic content
