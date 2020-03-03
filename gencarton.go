@@ -43,6 +43,9 @@ func New(pkg, name, path, out string) error {
 		Name:    name,
 	}
 	err := filepath.Walk(path, walker)
+	if err != nil {
+		return err
+	}
 
 	os.Truncate(out, 0)
 	fd, err := os.OpenFile(out, os.O_RDWR|os.O_CREATE, 0644)
