@@ -26,6 +26,12 @@ func BenchmarkGenerateCarton(b *testing.B) {
 }
 
 func TestGetFile(t *testing.T) {
+	t.Log("Listing files from carton.go.")
+	fl := carton.Files()
+	if len(fl) != 1 && fl[0] != "carton.tpl" {
+		t.Error(errors.New("carton content mismatch"))
+	}
+
 	t.Log("Reading file from carton.go.")
 	b, err := carton.GetFile("carton.tpl")
 	if err != nil {
