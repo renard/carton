@@ -58,6 +58,23 @@ not clash with any other.
 
 To build the resource simply run `go generate`.
 
+If you get errors complaining about undefined variable:
+
+```
+./main.go:17:22: undefined: CartonFiles
+```
+
+Add a build directive in `main.go`:
+
+```
+//go:generate go test -tags gencarton
+// +build !gencarton
+
+package main
+
+```
+
+
 
 To use it in your application you can run something like:
 
