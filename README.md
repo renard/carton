@@ -110,7 +110,7 @@ details.
 [goreport-url]: https://goreportcard.com/report/github.com/renard/carton
 [build-img]: https://travis-ci.org/renard/carton.svg?branch=master
 [build-url]: https://travis-ci.org/renard/carton
-[cover-img]: https://coveralls.io/repos/github/renard/carton/badge.svg
+[cover-img]: https://coveralls.io/repos/github/renard/carton/badge.svg?branch=master
 [cover-url]: https://coveralls.io/github/renard/carton
 [godoc-img]: https://godoc.org/github.com/renard/carton?status.svg
 [godoc-url]: https://godoc.org/github.com/renard/carton
