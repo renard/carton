@@ -106,12 +106,12 @@ published by Sam Hocevar. See http://sam.zoy.org/wtfpl/COPYING for more
 details.
 
 
-[goreport-img]: https://goreportcard.com/badge/github.com/renard/carton
-[goreport-url]: https://goreportcard.com/report/github.com/renard/carton
+[goreport-img]: https://goreportcard.com/badge/github.com/renard/carton?branch=master
+[goreport-url]: https://goreportcard.com/report/github.com/renard/carton?branch=master
 [build-img]: https://travis-ci.org/renard/carton.svg?branch=master
 [build-url]: https://travis-ci.org/renard/carton
-[cover-img]: https://coveralls.io/repos/github/renard/carton/badge.svg
-[cover-url]: https://coveralls.io/github/renard/carton
+[cover-img]: https://coveralls.io/repos/github/renard/carton/badge.svg?branch=master
+[cover-url]: https://coveralls.io/github/renard/carton?branch=master
 [godoc-img]: https://godoc.org/github.com/renard/carton?status.svg
 [godoc-url]: https://godoc.org/github.com/renard/carton
 [license-img]: https://img.shields.io/badge/License-WTFPL-brightgreen.svg
